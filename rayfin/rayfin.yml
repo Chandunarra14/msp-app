@@ -1,0 +1,27 @@
+id: msp-app
+name: msp-app
+version: 1.0.0
+services:
+  auth:
+    enabled: true
+    fabric:
+      enabled: true
+    password:
+      enabled: true
+    allowedRedirectUris:
+      - http://localhost:5173
+      - http://127.0.0.1:5173
+      - https://rusty-terra-9bf87cd821-eastus2.webapp.fabricapps.net
+  data:
+    enabled: true
+    dialect: mssql
+  staticHosting:
+    enabled: true
+    folder: dist
+    buildCommand: npm run build:fabric
+    indexDocument: index.html
+    assetAccess: protected
+  storage:
+    enabled: false
+  functions:
+    enabled: false
